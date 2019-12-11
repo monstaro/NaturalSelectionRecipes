@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Recipe = require('../src/recipes.js')
+const Recipe = require('../src/recipe.js')
 
 beforeEach(() => {
   recipe = new Recipe('Bowl of corn flakes', 328130, "https://spoonacular.com/recipeImages/678353-556x370.jpg", ['corn flakes', 'milk'], 'pour cereal then milk', 'breakfast')
