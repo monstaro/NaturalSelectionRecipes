@@ -2,7 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const User = require('../src/users.js')
-const Recipe = require('../src/recipes.js')
+const Recipe = require('../src/recipe.js')
 let user;
 let recipe;
 beforeEach(() => {
@@ -33,21 +33,21 @@ describe('User', () => {
   })
 
   it('should be able to add to favorite recipes', () => {
-    expect(user.favoriteRecipes).to.equal([]);
+    expect(user.favoriteRecipes.length).to.equal(0);
     let recipe = new Recipe();
-    user.favoriteRecipes(recipe);
+    user.addToFavorites(recipe);
     expect(user.favoriteRecipes.length).to.equal(1)
   })
 
   describe ('addToRecipeToBuild', () => {
     it('should only have a length of 1', () => {
       let recipe = new Recipe();
-      expect(this.recipeToBuild.length).to.equal(0);
-      this.addToRecipeToBuild(recipe);
-      expect(this.recipeToBuild.length).to.equal(1);
-      this.addToRecipeToBuild(recipe);
-      this.addToRecipeToBuild(recipe);
-      expect(this.recipeToBuild.length).to.equal(1);
+      expect(user.recipeToBuild.length).to.equal(0);
+      user.addToRecipeToBuild(recipe);
+      expect(user.recipeToBuild.length).to.equal(1);
+      user.addToRecipeToBuild(recipe);
+      user.addToRecipeToBuild(recipe);
+      expect(user.recipeToBuild.length).to.equal(1);
     })
   }) 
 })   
