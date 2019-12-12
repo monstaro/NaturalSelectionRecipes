@@ -1,9 +1,8 @@
-/* eslint-disable max-len */
 let allRecipes = [];
 let searchPool = allRecipes;
 let personalPantry = [];
 let searchResults = [];
-let currentPage = 'All Recipes'
+let currentPage = 'All Recipes';
 let user;
 let searchInput = document.querySelector('.search-input');
 
@@ -86,7 +85,7 @@ const genRanNum = () => {
 const instantiateUser = () => {
   var selectedUser = users.find(person => {
     return person.id === randomNum;
-  })
+  });
   user = new User(
     selectedUser.id,
     selectedUser.name,
@@ -101,7 +100,7 @@ const buildIngredientsList = () => {
       document.querySelector('.full-recipe-ingredient-name-container').innerHTML += `
     <li>${recipe.ingredients[i].quantity.amount}
     ${recipe.ingredients[i].quantity.unit} ${recipe.ingredients[i].name} </li> `
-  });
+    });
   }
   buildRecipeSteps();
 }
@@ -189,10 +188,11 @@ const addToFavoritesOrMenu = e => {
 
 const turnNavBtnsWhite = () => {
   let navHeadings = ['.display-fav-button', '.all-recipes',
-  '.my-menu', '.my-pantry'];
+    '.my-menu', '.my-pantry'
+  ];
   navHeadings.forEach(heading => {
     document.querySelector(`${heading}`).style.color = '#FFFFFF';
-  })
+  });
 }
 
 const highlightNavBtn = (navItem) => {
@@ -206,13 +206,13 @@ const clearRecipeCardArea = () => {
 const emptyAreaErrorMessage = (emptyArea, message) => {
   if (user[emptyArea].length === 0) {
     document.querySelector('.recipe-card-area').insertAdjacentHTML('afterbegin',
-     `<div class="fav-recipe-error-message-container">
+      `<div class="fav-recipe-error-message-container">
       <p class="error-message">You don't have any ${message} at this time</p>
     </div>`);
   } else {
     return;
   }
-};
+}
 
 const clearCardAreaAndResetTabs = () => {
   turnNavBtnsWhite();
