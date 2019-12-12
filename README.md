@@ -1,36 +1,34 @@
 # Natural Selection Recipes
+A web app for organizing all your favorite recipes in one place.
 
-A place to organize your pantry and some delicious recipes
-## How to Use 
+### Introduction
 
-The site currently logs you in as a user. From there, you can browse an assortment of recipes, and search through them based on their name, ingredients, or type (breakfast, lunch, appetizers, etc.)
-From there, you can add a recipe to a favorites list or a weekly menu list to keep your meals for the week organized. 
-When you choose to cook a recipe, you can compare the contents of your pantry to the ingredients of the recipe to make sure you have everything you need to make your meal. 
+Natural Selection is our second project in Mod2 of Turing School of Software and Design (it is a paired project). The goal was to create a web app that uses multiple data sets including users, recipes, and ingredients. Upon load, the app logs in a random user along with their specific information including name and personal pantry items.<br>
 
+**link to live page:** https://monstaro.github.io/NaturalSelectionRecipes/src/index.html
 
-<img width="400" display="inline" alt="Home Page" src="https://user-images.githubusercontent.com/32964891/70648551-8979d300-1c08-11ea-8c79-d2c96648a07a.png"> <img width="400" display="inline" alt="All Recipes" src="https://user-images.githubusercontent.com/32964891/70648552-8979d300-1c08-11ea-97b8-7f4e61ccea87.png"> <img width="400" display="inline" alt="Specific Recipe" src="https://user-images.githubusercontent.com/32964891/70648553-8979d300-1c08-11ea-9cb5-fddc5fdfa859.png"> <img width="400" display="inline" alt="Favorite Recipe View" src="https://user-images.githubusercontent.com/32964891/70648554-8979d300-1c08-11ea-875f-d3b92c39f74b.png">
+### Directions and Features
 
+On load the user will see a splash screen greeting the user by name. The user will then see all the recipes available represented by individual recipe cards. The site can be navigated by the blue nav bar on the top of the page.
 
+**Search**<br>By typing in the search box, a user will see their results in real time. Searches can include recipe names, recipe ingredients, or recipe tags.
 
-## Tags
+**View Recipe**<br>When a user selects the "View Recipe" button, an expanded window appears revealing the full recipe including ingredients with amounts, instructions, and tags associated.
 
-You can search recipes under the following categories:
+**My Favorites**<br>When a user selects the "+/- My Favorites" button on a recipe card, the selected recipe will be added to the My Favorites tab on the nav bar. Upon clicking the "+/- My Favorites" button again, the recipe will be removed from this area.
 
-- Breakfast
-- Lunch
-- Dinner
-- Antipasti
-- Antipasto
-- Starters
-- Appetizers
-- Snack
-- Hor d'oeuvre
-- Main course
-- Main dish
-- Sauce
+**My Menu**<br>When a user selects the "+/- My Menu" button on a recipe card, the selected recipe will be added to the My Menu tab on the nav bar. This area is used to store recipes a user plans to cook in the near future. Once the user cooks this recipe, they can select the "+/- My Menu" button again to remove it from this area.
 
-## Tech Used
+### Screenshots
 
-This project was built using Vanilla JS by @ZaneMeroff and @monstaro
+![Natural Selection App Screenshot](https://user-images.githubusercontent.com/53405028/70674950-cd8ac900-1c44-11ea-977f-53c6014720a7.png)
 
+### Technologies Used
 
+HTML, CSS, Vanilla JavaScript
+
+### Contributors
+
+Zachary Nemeroff https://github.com/ZaneMeroff
+
+Cody Smith https://github.com/monstaro

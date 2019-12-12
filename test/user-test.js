@@ -6,7 +6,7 @@ const Recipe = require('../src/recipe.js')
 let user;
 let recipe;
 beforeEach(() => {
-  user = new User(1, 'Saige Okon',  [
+  user = new User(13845, 'Saige Okon',  [
     {
       "ingredient": 11477,
       "amount": 1
@@ -27,20 +27,44 @@ describe('User', () => {
     expect(user).to.be.an.instanceof(User);
   })
 
+  it('should have an id', () => {
+    expect(user.id).to.equal(13845);
+    expect(user.id).to.not.equal(00000);
+  })
+
+  it('should have a name', () => {
+    expect(user.name).to.equal('Saige Okon');
+    expect(user.name).to.not.equal('Bob Belcher');
+  })
+
   it('should have a pantry', () => {
     expect(user.pantry.length).to.equal(2);
     expect(user.pantry.length).to.not.equal(0);
   })
 
-  it('should be able to add to favorite recipes', () => {
-    expect(user.favoriteRecipes.length).to.equal(0);
-    let recipe = new Recipe();
-    user.addToFavorites(recipe);
-    expect(user.favoriteRecipes.length).to.equal(1)
+  describe ('addToFavorites', () => {
+
+    it('should be able to add to favorite recipes', () => {
+      expect(user.favoriteRecipes.length).to.equal(0);
+      let recipe = new Recipe();
+      user.addToFavorites(recipe);
+      expect(user.favoriteRecipes.length).to.equal(1)
+    })
+  })
+
+  describe ('addToMyMenu', () => {
+
+    it('should be able to add to my menu', () => {
+      let recipe = new Recipe();
+      expect(user.myMenu.length).to.equal(0);
+      user.addToMyMenu(recipe);
+      expect(user.myMenu.length).to.equal(1);
+    })
   })
 
   describe ('addToRecipeToBuild', () => {
-    it('should only have a length of 1', () => {
+
+    it('recipeToBuild should only be able to hold 1 recipe', () => {
       let recipe = new Recipe();
       expect(user.recipeToBuild.length).to.equal(0);
       user.addToRecipeToBuild(recipe);
@@ -49,6 +73,5 @@ describe('User', () => {
       user.addToRecipeToBuild(recipe);
       expect(user.recipeToBuild.length).to.equal(1);
     })
-  }) 
-})   
-   
+  })
+})
